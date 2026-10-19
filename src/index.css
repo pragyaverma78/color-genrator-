@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: #252525;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #faf9f6;
+  padding: 32px 6%;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-icon {
+  color: #805ad5;
+  font-size: 2rem;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.palette-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #805ad5;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-heading h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -1.5px;
+}
+
+.color-count {
+  color: #777;
+  background: #eeece7;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.color-column {
+  min-width: 0;
+}
+
+.color-swatch {
+  width: 100%;
+  height: clamp(180px, 28vw, 320px);
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-swatch:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #00000018;
+}
+
+.copy-icon {
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  text-shadow: 0 1px 5px #00000055;
+}
+
+.color-swatch:hover .copy-icon {
+  opacity: 1;
+}
+
+.hex-code {
+  width: 100%;
+  margin-top: 14px;
+  border: none;
+  background: transparent;
+  font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.hex-code:hover {
+  color: #805ad5;
+}
+
+.generate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px auto 0;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 12px;
+  background: #252525;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.generate-button:hover {
+  background: #805ad5;
+  transform: translateY(-2px);
+}
+
+.generate-button span {
+  font-size: 1.4rem;
+}
+
+.hint {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  padding-top: 24px;
+}
+
+.footer span {
+  color: #e25565;
+}
+
+@media (max-width: 650px) {
+  .app {
+    padding: 24px 18px;
+  }
+
+  .palette-section {
+    padding: 45px 0;
+  }
+
+  .palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .color-swatch {
+    height: 180px;
+  }
+
+  .section-heading h1 {
+    font-size: 1.7rem;
+  }
+
+  .color-column:last-child {
+    grid-column: span 2;
+  }
+
+  .color-column:last-child .color-swatch {
+    height: 140px;
+  }
+
+  .hex-code {
+    font-size: 0.9rem;
+  }
+}
